@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Edit Module</title>
+</head>
+
+<body>
+	<h2>Edit Module</h2>
+
+	
+
+
+	<% if (errors !=undefined) { %>
+		<ul>
+			<% errors.forEach((err)=> { %>
+				<li>
+					<%= err.msg %>
+				</li>
+				<% }) %>
+		</ul>
+		<% } %>
+
+			<form action="/modules/<%= mid %>" method="POST">
+				<label>Module ID:</label>
+				<input disabled type="text" name="id" value="<%= mid %>"" ><br>
+		<label> Name:</label>
+		<input type=" text" name="name" value="<%= name %>"" ><br>
+		<label> Credits:</label>
+		<input type=" number" name="credits" value="<%= credits %>"><br>
+				<input type="submit" value="Edit " />
+			</form>
+			<br>
+			<a href="/">
+				<- Home </a><br>
+
+</body>
+
+</html>
